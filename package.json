@@ -1,0 +1,20 @@
+{
+  "name": "rds-job",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@huaweicloud/huaweicloud-sdk-core": "^3.1.186",
+    "@huaweicloud/huaweicloud-sdk-rds": "^3.1.186",
+    "@huaweicloud/huaweicloud-sdk-smn": "^3.1.186",
+    "dotenv": "^17.3.1",
+    "uuid": "^13.0.0"
+  }
+}
