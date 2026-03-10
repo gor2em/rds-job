@@ -15,6 +15,6 @@
     "@huaweicloud/huaweicloud-sdk-rds": "^3.1.186",
     "@huaweicloud/huaweicloud-sdk-smn": "^3.1.186",
     "dotenv": "^17.3.1",
-    "uuid": "^13.0.0"
+    "uuid": "^9.0.1"
   }
 }

@@ -116,7 +116,7 @@ async function sendNotification(client, subject, message) {
   return client.publishMessage(request);
 }
 
-async function main() {
+exports.handler = async function (event, context) {
   const rdsClient = createRdsClient();
   const smnClient = createSmnClient();
 
@@ -124,7 +124,7 @@ async function main() {
 
   if (!backup) {
     console.log("No backups found for today. Skipping notification.");
-    return;
+    return { statusCode: 200, body: "No backups found for today." };
   }
 
   const isHealthy = backup.status === "COMPLETED";
@@ -138,9 +138,5 @@ async function main() {
   const result = await sendNotification(smnClient, subject, message);
 
   console.log("Notification sent.", JSON.stringify(result, null, 2));
-}
-
-main().catch((err) => {
-  console.error("Error:", JSON.stringify(err, null, 2));
-  process.exit(1);
-});
+  return { statusCode: 200, body: result };
+};
